@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: arablinetours-website
+  labels:
+    app: arablinetours-website
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: arablinetours-website
+  template:
+    metadata:
+      labels:
+        app: arablinetours-website
+    spec:
+      containers:
+      - name: arablinetours-website
+        image: arablinetours/website:latest
+        ports:
+        - containerPort: 3000
+        resources:
+          limits:
+            cpu: "0.5"
+            memory: "512Mi"
+          requests:
+            cpu: "0.2"
+            memory: "256Mi"
+        livenessProbe:
+          httpGet:
+            path: /
+            port: 3000
+          initialDelaySeconds: 30
+          periodSeconds: 10
+        readinessProbe:
+          httpGet:
+            path: /
+            port: 3000
+          initialDelaySeconds: 5
+          periodSeconds: 5

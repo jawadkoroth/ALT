@@ -33,20 +33,20 @@ export default function HomePage() {
 
   return (
     <LanguageProvider>
-      <div className="min-h-screen bg-white">
+      <div className="min-h-screen bg-[#3a86ff] text-white">
         <NavigationBar />
         <main>
           <HeroSection />
-          <footer className="bg-[#3a86ff]/5 py-8">
+          <footer className="bg-[#3a86ff]/80 py-8">
             <div className="container mx-auto px-4">
               <div className="flex flex-col md:flex-row justify-between items-center">
                 <div className="mb-6 md:mb-0">
                   <img
-                    src="/logo.svg"
+                    src="/arab-line-tours-logo.jpg"
                     alt="Arab Line Tours"
                     className="h-12 w-auto"
                   />
-                  <p className="text-gray-600 mt-2 text-sm">
+                  <p className="text-white/80 mt-2 text-sm">
                     Your premium travel partner in UAE
                   </p>
                 </div>
@@ -55,17 +55,17 @@ export default function HomePage() {
                     <h3 className="font-semibold text-[#3a86ff] mb-3">
                       Contact
                     </h3>
-                    <p className="text-gray-600 text-sm">
+                    <p className="text-white/80 text-sm">
                       info@arablinetours.com
                     </p>
-                    <p className="text-gray-600 text-sm">+971 50 123 4567</p>
+                    <p className="text-white/80 text-sm">+971 50 123 4567</p>
                   </div>
                   <div>
                     <h3 className="font-semibold text-[#3a86ff] mb-3">
                       Address
                     </h3>
-                    <p className="text-gray-600 text-sm">Sheikh Zayed Road</p>
-                    <p className="text-gray-600 text-sm">Dubai, UAE</p>
+                    <p className="text-white/80 text-sm">Sheikh Zayed Road</p>
+                    <p className="text-white/80 text-sm">Dubai, UAE</p>
                   </div>
                   <div>
                     <h3 className="font-semibold text-[#3a86ff] mb-3">
@@ -139,7 +139,7 @@ export default function HomePage() {
                   </div>
                 </div>
               </div>
-              <div className="border-t border-gray-200 mt-8 pt-8 text-center text-gray-500 text-sm">
+              <div className="border-t border-white/20 mt-8 pt-8 text-center text-white/70 text-sm">
                 © {new Date().getFullYear()} Arab Line Tours. All rights
                 reserved.
               </div>

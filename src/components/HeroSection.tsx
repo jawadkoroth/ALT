@@ -4,6 +4,7 @@ import React from "react";
 import { Button } from "./ui/button";
 import Image from "next/image";
 import { useLanguage } from "./LanguageContext";
+import InteractiveGlobe from "./InteractiveGlobe";
 
 interface HeroSectionProps {
   whatsappLink?: string;
@@ -19,19 +20,19 @@ const HeroSection = ({
   };
 
   return (
-    <div className="relative min-h-screen w-full bg-white pt-20">
+    <div className="relative min-h-screen w-full bg-[#3a86ff] pt-20">
       {/* Main Content */}
       <div className="container mx-auto px-4 py-20">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           {/* Left Column - Text Content */}
           <div className="space-y-8">
             <div className="space-y-2">
-              <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-gray-900">
+              <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-white">
                 {language === "ar"
                   ? translate("hero.title")
                   : "Discover the Beauty of UAE"}
               </h1>
-              <p className="text-xl text-gray-600 mt-4 max-w-md">
+              <p className="text-xl text-white/80 mt-4 max-w-md">
                 {language === "ar"
                   ? translate("hero.subtitle")
                   : "Experience luxury travel with personalized service"}
@@ -41,15 +42,15 @@ const HeroSection = ({
             <div className="flex flex-col sm:flex-row gap-4">
               <Button
                 onClick={handleCTAClick}
-                className="bg-[#3a86ff] hover:bg-[#3a86ff]/90 text-white px-8 py-6 rounded-md text-lg font-medium transition-all"
+                className="bg-white hover:bg-white/90 text-[#3a86ff] px-8 py-6 rounded-md text-lg font-medium transition-all"
               >
                 {language === "ar" ? translate("hero.cta") : "Book Your Trip"}
               </Button>
 
               <Button
                 variant="outline"
-                className="border-[#3a86ff] text-[#3a86ff] hover:bg-[#3a86ff]/5 px-8 py-6 rounded-md text-lg font-medium transition-all"
-                onClick={() => window.open("tel:+971501234567", "_blank")}
+                className="border-white text-white hover:bg-white/10 px-8 py-6 rounded-md text-lg font-medium transition-all"
+                onClick={() => window.open("tel:+971501234567")}
               >
                 Call Us
               </Button>
@@ -57,33 +58,29 @@ const HeroSection = ({
 
             <div className="flex items-center space-x-4">
               <div className="h-1 w-20 bg-[#3a86ff]"></div>
-              <p className="text-gray-500">Premium Travel Services</p>
+              <p className="text-white/70">Premium Travel Services</p>
             </div>
           </div>
 
-          {/* Right Column - Logo/Brand */}
+          {/* Right Column - Interactive Globe */}
           <div className="flex justify-center items-center">
-            <div className="relative w-full max-w-md aspect-square bg-[#3a86ff] rounded-full flex items-center justify-center p-8 shadow-lg">
-              <img
-                src="/logo.svg"
-                alt="Arab Line Tours"
-                className="w-full h-auto"
-              />
+            <div className="relative w-full max-w-md aspect-square bg-[#3a86ff] rounded-full flex items-center justify-center shadow-lg overflow-hidden">
+              <InteractiveGlobe size={400} />
             </div>
           </div>
         </div>
 
         {/* Features Section */}
         <div className="mt-32 grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div className="p-6 bg-[#3a86ff]/5 rounded-lg">
-            <div className="w-12 h-12 bg-[#3a86ff] rounded-full flex items-center justify-center mb-4">
+          <div className="p-6 bg-white/10 rounded-lg">
+            <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center mb-4">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
                 height="24"
                 viewBox="0 0 24 24"
                 fill="none"
-                stroke="white"
+                stroke="#3a86ff"
                 strokeWidth="2"
                 strokeLinecap="round"
                 strokeLinejoin="round"
@@ -92,21 +89,23 @@ const HeroSection = ({
                 <circle cx="12" cy="10" r="3"></circle>
               </svg>
             </div>
-            <h3 className="text-xl font-semibold mb-2">Visa Services</h3>
-            <p className="text-gray-600">
+            <h3 className="text-xl font-semibold mb-2 text-white">
+              Visa Services
+            </h3>
+            <p className="text-white/80">
               Fast and reliable visa processing for UAE and GCC countries.
             </p>
           </div>
 
-          <div className="p-6 bg-[#3a86ff]/5 rounded-lg">
-            <div className="w-12 h-12 bg-[#3a86ff] rounded-full flex items-center justify-center mb-4">
+          <div className="p-6 bg-white/10 rounded-lg">
+            <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center mb-4">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
                 height="24"
                 viewBox="0 0 24 24"
                 fill="none"
-                stroke="white"
+                stroke="#3a86ff"
                 strokeWidth="2"
                 strokeLinecap="round"
                 strokeLinejoin="round"
@@ -118,21 +117,23 @@ const HeroSection = ({
                 <path d="M8 15h8"></path>
               </svg>
             </div>
-            <h3 className="text-xl font-semibold mb-2">Ticket Booking</h3>
-            <p className="text-gray-600">
+            <h3 className="text-xl font-semibold mb-2 text-white">
+              Ticket Booking
+            </h3>
+            <p className="text-white/80">
               Seamless flight and hotel bookings at competitive prices.
             </p>
           </div>
 
-          <div className="p-6 bg-[#3a86ff]/5 rounded-lg">
-            <div className="w-12 h-12 bg-[#3a86ff] rounded-full flex items-center justify-center mb-4">
+          <div className="p-6 bg-white/10 rounded-lg">
+            <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center mb-4">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
                 height="24"
                 viewBox="0 0 24 24"
                 fill="none"
-                stroke="white"
+                stroke="#3a86ff"
                 strokeWidth="2"
                 strokeLinecap="round"
                 strokeLinejoin="round"
@@ -145,8 +146,10 @@ const HeroSection = ({
                 <path d="m20 12 2 0"></path>
               </svg>
             </div>
-            <h3 className="text-xl font-semibold mb-2">Tour Packages</h3>
-            <p className="text-gray-600">
+            <h3 className="text-xl font-semibold mb-2 text-white">
+              Tour Packages
+            </h3>
+            <p className="text-white/80">
               Customized tour packages for individuals and groups.
             </p>
           </div>
