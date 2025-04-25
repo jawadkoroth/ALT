@@ -1,9 +1,10 @@
 pipeline {
-    agent any  // Use the Jenkins host that has Docker installed
+    agent any
 
     environment {
         CI = 'true'
         HOME = "${WORKSPACE}"
+        IMAGE_NAME = 'jawadkoroth/arablinetours-website:latest'
     }
 
     stages {
@@ -21,7 +22,13 @@ pipeline {
 
         stage('Run Tests') {
             steps {
-                sh 'npm test || echo "Skipping tests"'
+                script {
+                    try {
+                        sh 'npm test'
+                    } catch (err) {
+                        echo "Skipping tests - no test script found"
+                    }
+                }
             }
         }
 
@@ -33,7 +40,7 @@ pipeline {
 
         stage('Build Docker Image') {
             steps {
-                sh 'docker build -t jawadkoroth/arablinetours-website .'
+                sh 'docker build -t $IMAGE_NAME .'
             }
         }
 
@@ -41,7 +48,7 @@ pipeline {
             steps {
                 script {
                     docker.withRegistry('https://registry.hub.docker.com', 'docker-hub-credentials') {
-                        sh 'docker push jawadkoroth/arablinetours-website:latest'
+                        sh 'docker push $IMAGE_NAME'
                     }
                 }
             }
@@ -51,7 +58,7 @@ pipeline {
             steps {
                 sh '''
                     docker rm -f arablinetours-website || true
-                    docker run -d -p 8041:3000 --name arablinetours-website jawadkoroth/arablinetours-website:latest
+                    docker run -d -p 8041:3000 --name arablinetours-website $IMAGE_NAME
                 '''
             }
         }
