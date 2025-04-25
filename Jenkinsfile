@@ -79,12 +79,20 @@ pipeline {
     stage('Deploy Docker Container') {
       steps {
         script {
-          sh """
-            docker stop $CONTAINER_NAME || true
-            docker rm $CONTAINER_NAME || true
+          // Check if any container is running with the same name and on the same port
+          def existingContainer = sh(script: "docker ps --filter name=$CONTAINER_NAME --filter 'publish=$PORT' -q", returnStdout: true).trim()
 
-            docker run -d --name $CONTAINER_NAME -p $PORT:3000 $IMAGE_NAME
-          """
+          if (existingContainer) {
+            echo "Stopping and removing existing container $CONTAINER_NAME on port $PORT"
+            // Stop and remove the existing container
+            sh "docker stop $existingContainer"
+            sh "docker rm $existingContainer"
+          } else {
+            echo "No existing container found on port $PORT"
+          }
+
+          // Run the new container
+          sh "docker run -d --name $CONTAINER_NAME -p $PORT:3000 $IMAGE_NAME"
         }
       }
     }
