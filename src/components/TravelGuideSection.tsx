@@ -137,7 +137,7 @@ const TravelGuideSection = ({
   },
   items = defaultItems,
 }: TravelGuideSectionProps) => {
-  const { language, t } = useLanguage();
+  const { language, translate } = useLanguage();
 
   const handleLearnMore = () => {
     // Redirect to WhatsApp Business chat
