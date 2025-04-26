@@ -53,12 +53,12 @@ const NavigationBar = ({
       <div className="container mx-auto px-4 flex justify-between items-center">
         {/* Logo */}
         <Link href="/" className="flex items-center">
-          <div className="relative h-10 w-32">
+          <div className="relative h-14 w-40">
             <Image
               src={logo}
               alt="Arab Line Tours"
-              width={128}
-              height={40}
+              width={160}
+              height={56}
               style={{ objectFit: "contain" }}
               priority
             />
