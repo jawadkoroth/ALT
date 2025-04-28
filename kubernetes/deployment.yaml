@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: arablinetours-website
-        image: arablinetours/website:latest
+        image: jawadkoroth/alt
         ports:
         - containerPort: 3000
         resources:
