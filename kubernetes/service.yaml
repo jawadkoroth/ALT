@@ -5,20 +5,11 @@ metadata:
   labels:
     app: arablinetours-website
 spec:
-  type: ClusterIP
-  ports:
-  - port: 80
-    targetPort: 3000
-    protocol: TCP
-  selector:
-    app: arablinetours-website
----
-spec:
   type: LoadBalancer
   ports:
   - port: 80
     targetPort: 3000
+    nodePort: 32119
     protocol: TCP
   selector:
     app: arablinetours-website
-
