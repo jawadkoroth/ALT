@@ -5,18 +5,25 @@ import { Button } from "./ui/button";
 import Image from "next/image";
 import { useLanguage } from "./LanguageContext";
 import InteractiveGlobe from "./InteractiveGlobe";
+import { Mail } from "lucide-react";
 
 interface HeroSectionProps {
   whatsappLink?: string;
+  emailAddress?: string;
 }
 
 const HeroSection = ({
   whatsappLink = "https://wa.me/971501234567",
+  emailAddress = "info@arablinetours.com",
 }: HeroSectionProps) => {
   const { language, translate } = useLanguage();
 
   const handleCTAClick = () => {
     window.open(whatsappLink, "_blank");
+  };
+
+  const handleEmailClick = () => {
+    window.open(`mailto:${emailAddress}`, "_blank");
   };
 
   return (
@@ -52,7 +59,16 @@ const HeroSection = ({
                 className="border-white text-white hover:bg-white/10 px-8 py-6 rounded-md text-lg font-medium transition-all"
                 onClick={() => window.open("tel:+971501234567")}
               >
-                Call Us
+                {language === "ar" ? translate("hero.call") : "Call Us"}
+              </Button>
+
+              <Button
+                variant="outline"
+                className="border-white text-white hover:bg-white/10 px-8 py-6 rounded-md text-lg font-medium transition-all"
+                onClick={handleEmailClick}
+              >
+                <Mail className="mr-2 h-5 w-5" />
+                {language === "ar" ? translate("hero.email") : "Email Us"}
               </Button>
 
               <Button
@@ -98,10 +114,14 @@ const HeroSection = ({
               </svg>
             </div>
             <h3 className="text-xl font-semibold mb-2 text-white">
-              Visa Services
+              {language === "ar"
+                ? translate("features.visaServices")
+                : "Visa Services"}
             </h3>
             <p className="text-white/80">
-              Fast and reliable visa processing for UAE and GCC countries.
+              {language === "ar"
+                ? translate("features.visaDescription")
+                : "Fast and reliable visa processing for UAE and GCC countries."}
             </p>
           </div>
 
@@ -126,10 +146,14 @@ const HeroSection = ({
               </svg>
             </div>
             <h3 className="text-xl font-semibold mb-2 text-white">
-              Ticket Booking
+              {language === "ar"
+                ? translate("features.ticketBooking")
+                : "Ticket Booking"}
             </h3>
             <p className="text-white/80">
-              Seamless flight and hotel bookings at competitive prices.
+              {language === "ar"
+                ? translate("features.ticketDescription")
+                : "Seamless flight and hotel bookings at competitive prices."}
             </p>
           </div>
 
@@ -155,10 +179,14 @@ const HeroSection = ({
               </svg>
             </div>
             <h3 className="text-xl font-semibold mb-2 text-white">
-              Tour Packages
+              {language === "ar"
+                ? translate("features.tourPackages")
+                : "Tour Packages"}
             </h3>
             <p className="text-white/80">
-              Customized tour packages for individuals and groups.
+              {language === "ar"
+                ? translate("features.tourDescription")
+                : "Customized tour packages for individuals and groups."}
             </p>
           </div>
         </div>

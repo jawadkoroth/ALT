@@ -175,15 +175,15 @@ const TravelGuideSection = ({
                   <span className="inline-block px-3 py-1 text-xs font-medium rounded-full bg-[#3a86ff] text-white">
                     {language === "en"
                       ? item.category === "destination"
-                        ? "Destination"
+                        ? translate("guide.destination")
                         : item.category === "custom"
-                          ? "Local Custom"
-                          : "Travel Tip"
+                          ? translate("guide.localCustom")
+                          : translate("guide.travelTip")
                       : item.category === "destination"
-                        ? "وجهة"
+                        ? translate("guide.destination")
                         : item.category === "custom"
-                          ? "عادات محلية"
-                          : "نصيحة سفر"}
+                          ? translate("guide.localCustom")
+                          : translate("guide.travelTip")}
                   </span>
                 </div>
               </div>
