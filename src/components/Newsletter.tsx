@@ -10,6 +10,8 @@ interface NewsletterProps {
   subtitle?: string;
   buttonText?: string;
   backgroundColor?: string;
+  placeholderName?: string;
+  placeholderEmail?: string;
 }
 
 const Newsletter = ({
@@ -17,55 +19,50 @@ const Newsletter = ({
   subtitle = "Stay updated with our latest offers and travel tips",
   buttonText = "Subscribe",
   backgroundColor = "bg-[#3a86ff]/10",
+  placeholderName = "Your Name",
+  placeholderEmail = "Your Email",
 }: NewsletterProps) => {
-  const [email, setEmail] = useState("");
   const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
   const [error, setError] = useState("");
-
   const { language } = useLanguage();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setIsSubmitting(true);
     setError("");
+    setIsSubmitting(true);
 
     // Validate inputs
     if (!name.trim()) {
-      setError("Please enter your name");
+      setError(language === "ar" ? "الرجاء إدخال اسمك" : "Please enter your name");
       setIsSubmitting(false);
       return;
     }
-
     if (!email.trim()) {
-      setError("Please enter your email");
+      setError(language === "ar" ? "الرجاء إدخال بريدك الإلكتروني" : "Please enter your email");
       setIsSubmitting(false);
       return;
     }
-
-    // Basic email validation
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
-      setError("Please enter a valid email address");
+      setError(language === "ar" ? "يرجى إدخال بريد إلكتروني صالح" : "Please enter a valid email address");
       setIsSubmitting(false);
       return;
     }
 
     try {
-      // Placeholder for actual API call
-      // In a real implementation, this would send data to a backend service
       console.log("Subscribing with:", { name, email });
-
-      // Simulate API call
-      await new Promise((resolve) => setTimeout(resolve, 1000));
-
+      await new Promise((r) => setTimeout(r, 1000));
       setIsSuccess(true);
       setName("");
       setEmail("");
     } catch (err) {
-      setError("Failed to subscribe. Please try again later.");
-      console.error("Newsletter subscription error:", err);
+      console.error(err);
+      setError(language === "ar"
+        ? "فشل الاشتراك. حاول مرة أخرى لاحقًا."
+        : "Failed to subscribe. Please try again later.");
     } finally {
       setIsSubmitting(false);
     }
@@ -85,46 +82,48 @@ const Newsletter = ({
           </p>
 
           {isSuccess ? (
-            <div className="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative mb-6">
-              <span className="block sm:inline">
-                {language === "ar"
-                  ? "تم الاشتراك بنجاح!"
-                  : "Successfully subscribed!"}
-              </span>
+            <div className="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded mb-6">
+              {language === "ar" ? "تم الاشتراك بنجاح!" : "Successfully subscribed!"}
             </div>
           ) : (
             <form onSubmit={handleSubmit} className="space-y-4">
               {error && (
-                <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative mb-6">
-                  <span className="block sm:inline">{error}</span>
+                <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mb-6">
+                  {error}
                 </div>
               )}
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <Input
                   type="text"
-                  placeholder={language === "ar" ? "الاسم" : "Your Name"}
                   value={name}
                   onChange={(e) => setName(e.target.value)}
-                  className="bg-white border-gray-300 h-12"
+                  placeholder={
+                    language === "ar"
+                      ? "الاسم"
+                      : placeholderName
+                  }
                   disabled={isSubmitting}
+                  className="bg-white border-gray-300 h-12"
                 />
                 <Input
                   type="email"
-                  placeholder={
-                    language === "ar" ? "البريد الإلكتروني" : "Your Email"
-                  }
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="bg-white border-gray-300 h-12"
+                  placeholder={
+                    language === "ar"
+                      ? "البريد الإلكتروني"
+                      : placeholderEmail
+                  }
                   disabled={isSubmitting}
+                  className="bg-white border-gray-300 h-12"
                 />
               </div>
 
               <Button
                 type="submit"
-                className="bg-[#3a86ff] hover:bg-[#3a86ff]/90 text-white px-8 py-3 h-12 w-full md:w-auto"
                 disabled={isSubmitting}
+                className="bg-[#3a86ff] hover:bg-[#3a86ff]/90 text-white px-8 py-3 h-12 w-full md:w-auto"
               >
                 {isSubmitting ? (
                   <span className="flex items-center justify-center">
@@ -134,26 +133,13 @@ const Newsletter = ({
                       fill="none"
                       viewBox="0 0 24 24"
                     >
-                      <circle
-                        className="opacity-25"
-                        cx="12"
-                        cy="12"
-                        r="10"
-                        stroke="currentColor"
-                        strokeWidth="4"
-                      ></circle>
-                      <path
-                        className="opacity-75"
-                        fill="currentColor"
-                        d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
-                      ></path>
+                      <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" className="opacity-25" />
+                      <path fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" className="opacity-75" />
                     </svg>
                     {language === "ar" ? "جارٍ الاشتراك..." : "Subscribing..."}
                   </span>
-                ) : language === "ar" ? (
-                  "اشترك"
                 ) : (
-                  buttonText
+                  language === "ar" ? "اشترك" : buttonText
                 )}
               </Button>
             </form>

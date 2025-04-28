@@ -70,6 +70,14 @@ const HeroSection = ({
                 <Mail className="mr-2 h-5 w-5" />
                 {language === "ar" ? translate("hero.email") : "Email Us"}
               </Button>
+
+              <Button
+                variant="outline"
+                className="border-white text-white hover:bg-white/10 px-8 py-6 rounded-md text-lg font-medium transition-all"
+                onClick={() => window.open("mailto:info@arablinetours.com")}
+              >
+                Email Us
+              </Button>
             </div>
 
             <div className="flex items-center space-x-4">
