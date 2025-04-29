@@ -34,10 +34,23 @@ const HeroSection = ({
           {/* Left Column - Text Content */}
           <div className="space-y-8">
             <div className="space-y-2">
-              <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-white">
-                {language === "ar"
-                  ? translate("hero.title")
-                  : "Discover the Beauty of UAE"}
+              <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-white hero-title">
+                {language === "ar" ? (
+                  translate("hero.title")
+                ) : (
+                  <>
+                    {"Discover the Beauty of UAE"
+                      .split("")
+                      .map((letter, index) => (
+                        <span
+                          key={index}
+                          className="inline-block hover:text-[#ffde59] transition-colors"
+                        >
+                          {letter === " " ? "\u00A0" : letter}
+                        </span>
+                      ))}
+                  </>
+                )}
               </h1>
               <p className="text-xl text-white/80 mt-4 max-w-md">
                 {language === "ar"

@@ -201,7 +201,7 @@ const TravelGuideSection = ({
               </CardContent>
               <CardFooter>
                 <Button
-                  onClick={handleLearnMore}
+                  onClick={() => handleLearnMore(item)}
                   className="w-full bg-[#3a86ff] hover:bg-[#2a76ef] text-white transition-colors"
                 >
                   {language === "en" ? "Learn More" : "معرفة المزيد"}
