@@ -139,11 +139,11 @@ const TravelGuideSection = ({
 }: TravelGuideSectionProps) => {
   const { language, translate } = useLanguage();
 
-  const handleLearnMore = () => {
-    // Redirect to WhatsApp Business chat
+  const handleLearnMore = (item: TravelGuideItem) => {
+    const message = `I'm interested in learning more about: ${item.title.en}`;
     window.open(
-      "https://wa.me/1234567890?text=I'm%20interested%20in%20learning%20more%20about%20UAE%20travel",
-      "_blank",
+      `https://wa.me/1234567890?text=${encodeURIComponent(message)}`,
+      "_blank"
     );
   };
 
