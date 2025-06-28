@@ -142,8 +142,8 @@ const TravelGuideSection = ({
   const handleLearnMore = (item: TravelGuideItem) => {
     const message = `I'm interested in learning more about: ${item.title.en}`;
     window.open(
-      `https://wa.me/1234567890?text=${encodeURIComponent(message)}`,
-      "_blank"
+      `https://wa.me/971507539011?text=${encodeURIComponent(message)}`,
+      "_blank",
     );
   };
 

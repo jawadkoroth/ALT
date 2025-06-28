@@ -88,7 +88,7 @@ export default function AboutPage() {
               </p>
               <div className="flex flex-col md:flex-row gap-4">
                 <a
-                  href="tel:+971501234567"
+                  href="tel:065664256"
                   className="inline-flex items-center justify-center bg-white text-[#3a86ff] px-6 py-3 rounded-md font-medium hover:bg-white/90 transition-colors"
                 >
                   Call Us

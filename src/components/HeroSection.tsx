@@ -13,7 +13,7 @@ interface HeroSectionProps {
 }
 
 const HeroSection = ({
-  whatsappLink = "https://wa.me/971501234567",
+  whatsappLink = "https://wa.me/971507539011",
   emailAddress = "info@arablinetours.com",
 }: HeroSectionProps) => {
   const { language, translate } = useLanguage();
@@ -34,11 +34,11 @@ const HeroSection = ({
           {/* Left Column - Text Content */}
           <div className="space-y-8">
             <div className="space-y-2">
-              <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-white hero-title">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white hero-title leading-tight">
                 {language === "ar" ? (
                   translate("hero.title")
                 ) : (
-                  <>
+                  <span className="block">
                     {"Discover the Beauty of UAE"
                       .split("")
                       .map((letter, index) => (
@@ -49,7 +49,7 @@ const HeroSection = ({
                           {letter === " " ? "\u00A0" : letter}
                         </span>
                       ))}
-                  </>
+                  </span>
                 )}
               </h1>
               <p className="text-xl text-white/80 mt-4 max-w-md">
@@ -70,7 +70,7 @@ const HeroSection = ({
               <Button
                 variant="outline"
                 className="border-white text-white hover:bg-white/10 px-8 py-6 rounded-md text-lg font-medium transition-all"
-                onClick={() => window.open("tel:+971501234567")}
+                onClick={() => window.open("tel:065664256")}
               >
                 {language === "ar" ? translate("hero.call") : "Call Us"}
               </Button>
@@ -84,11 +84,6 @@ const HeroSection = ({
                 <Mail className="mr-2 h-5 w-5" />
                 {language === "ar" ? translate("hero.email") : "Email Us"}
               </Button>
-            </div>
-
-            <div className="flex items-center space-x-4">
-              <div className="h-1 w-20 bg-[#3a86ff]"></div>
-              <p className="text-white/70">Premium Travel Services</p>
             </div>
           </div>
 

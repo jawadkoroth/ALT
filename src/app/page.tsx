@@ -4,7 +4,7 @@ import React, { useState, useEffect } from "react";
 import NavigationBar from "@/components/NavigationBar";
 import HeroSection from "@/components/HeroSection";
 import Newsletter from "@/components/Newsletter";
-import TravelGuideSection from "@/components/TravelGuideSection";
+
 import { LanguageProvider, useLanguage } from "@/components/LanguageContext";
 
 function HomePageContent() {
@@ -52,7 +52,6 @@ function HomePageContent() {
       <NavigationBar />
       <main>
         <HeroSection />
-        <TravelGuideSection />
         <Newsletter />
         <footer className="bg-[#3a86ff]/80 py-8">
           <div className="container mx-auto px-4">
@@ -75,7 +74,8 @@ function HomePageContent() {
                   <p className="text-white/80 text-sm">
                     info@arablinetours.com
                   </p>
-                  <p className="text-white/80 text-sm">+971 50 123 4567</p>
+                  <p className="text-white/80 text-sm">065664256</p>
+                  <p className="text-white/80 text-sm">0507539011</p>
                 </div>
                 <div>
                   <h3 className="font-semibold text-[#3a86ff] mb-3">Address</h3>

@@ -14,7 +14,7 @@ interface NavigationBarProps {
 
 const NavigationBar = ({
   logo = "/arab-line-tours-logo.jpg",
-  whatsappNumber = "971501234567",
+  whatsappNumber = "971507539011",
 }: NavigationBarProps) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -53,12 +53,12 @@ const NavigationBar = ({
       <div className="container mx-auto px-4 flex justify-between items-center">
         {/* Logo */}
         <Link href="/" className="flex items-center">
-          <div className="relative h-14 w-40">
+          <div className="relative h-16 w-48">
             <Image
               src={logo}
               alt="Arab Line Tours"
-              width={160}
-              height={56}
+              width={192}
+              height={64}
               style={{ objectFit: "contain" }}
               priority
             />
@@ -73,6 +73,14 @@ const NavigationBar = ({
               className="text-white hover:text-white/80 transition-colors"
             >
               {translate("nav.about")}
+            </Button>
+          </Link>
+          <Link href="/travel-guide" passHref>
+            <Button
+              variant="ghost"
+              className="text-white hover:text-white/80 transition-colors"
+            >
+              Travel Guide
             </Button>
           </Link>
           <Button
@@ -123,6 +131,14 @@ const NavigationBar = ({
                 className="text-white hover:text-white/80 transition-colors w-full justify-start"
               >
                 {translate("nav.about")}
+              </Button>
+            </Link>
+            <Link href="/travel-guide" passHref>
+              <Button
+                variant="ghost"
+                className="text-white hover:text-white/80 transition-colors w-full justify-start"
+              >
+                Travel Guide
               </Button>
             </Link>
             <Button

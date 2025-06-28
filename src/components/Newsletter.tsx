@@ -229,6 +229,123 @@ const Newsletter = ({
                 : "We'll never share your email with anyone else."}
             </p>
           </div>
+
+          {/* Services Section */}
+          <div className="bg-white rounded-xl shadow-lg p-8 border border-gray-100 mt-8">
+            <div className="text-center mb-6">
+              <h3 className="text-2xl font-bold text-[#3a86ff] mb-4">
+                {language === "ar" ? "خدماتنا" : "Our Services"}
+              </h3>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+              <div className="bg-[#3a86ff]/5 p-4 rounded-lg border border-[#3a86ff]/10">
+                <h4 className="font-semibold text-[#3a86ff] mb-2">
+                  {language === "ar"
+                    ? "التذاكر (أسعار خاصة متاحة)"
+                    : "Tickets (Special rates available)"}
+                </h4>
+              </div>
+
+              <div className="bg-[#3a86ff]/5 p-4 rounded-lg border border-[#3a86ff]/10">
+                <h4 className="font-semibold text-[#3a86ff] mb-2">
+                  {language === "ar" ? "باقة البحث عن عمل" : "Job Hunt Package"}
+                </h4>
+              </div>
+
+              <div className="bg-[#3a86ff]/5 p-4 rounded-lg border border-[#3a86ff]/10">
+                <h4 className="font-semibold text-[#3a86ff] mb-2">
+                  {language === "ar" ? "باقات السياحة" : "Tour Packages"}
+                </h4>
+              </div>
+
+              <div className="bg-[#3a86ff]/5 p-4 rounded-lg border border-[#3a86ff]/10">
+                <h4 className="font-semibold text-[#3a86ff] mb-2">
+                  {language === "ar" ? "حجز الفنادق" : "Hotel Booking"}
+                </h4>
+              </div>
+
+              <div className="bg-[#3a86ff]/5 p-4 rounded-lg border border-[#3a86ff]/10">
+                <h4 className="font-semibold text-[#3a86ff] mb-2">
+                  {language === "ar" ? "سفاري الصحراء" : "Desert Safari"}
+                </h4>
+              </div>
+
+              <div className="bg-[#3a86ff]/5 p-4 rounded-lg border border-[#3a86ff]/10">
+                <h4 className="font-semibold text-[#3a86ff] mb-2">
+                  {language === "ar"
+                    ? "مساعدة التأشيرة العالمية"
+                    : "Global Visa Assistance"}
+                </h4>
+              </div>
+
+              <div className="bg-[#3a86ff]/5 p-4 rounded-lg border border-[#3a86ff]/10">
+                <h4 className="font-semibold text-[#3a86ff] mb-2">
+                  {language === "ar"
+                    ? "خدمات تأشيرة العائلة"
+                    : "Family Visa Services"}
+                </h4>
+              </div>
+
+              <div className="bg-[#3a86ff]/5 p-4 rounded-lg border border-[#3a86ff]/10">
+                <h4 className="font-semibold text-[#3a86ff] mb-2">
+                  {language === "ar"
+                    ? "تصديق الشهادات"
+                    : "Certificate Attestation"}
+                </h4>
+              </div>
+
+              <div className="bg-[#3a86ff]/5 p-4 rounded-lg border border-[#3a86ff]/10">
+                <h4 className="font-semibold text-[#3a86ff] mb-2">
+                  {language === "ar" ? "العمرة" : "Umrah"}
+                </h4>
+              </div>
+
+              <div className="bg-[#3a86ff]/5 p-4 rounded-lg border border-[#3a86ff]/10">
+                <h4 className="font-semibold text-[#3a86ff] mb-2">
+                  {language === "ar"
+                    ? "إعداد الترخيص وتكوين الشركة"
+                    : "License Setup and Company Formation"}
+                </h4>
+              </div>
+
+              <div className="bg-[#3a86ff]/5 p-4 rounded-lg border border-[#3a86ff]/10">
+                <h4 className="font-semibold text-[#3a86ff] mb-2">
+                  {language === "ar"
+                    ? "ترتيب الكفيل وغيرها"
+                    : "Sponsor Arranging Etc"}
+                </h4>
+              </div>
+            </div>
+
+            <div className="text-center mt-6">
+              <p className="text-gray-600 mb-4">
+                {language === "ar"
+                  ? "للاستفسار عن أي من خدماتنا، تواصل معنا الآن"
+                  : "For inquiries about any of our services, contact us now"}
+              </p>
+              <div className="flex flex-col sm:flex-row gap-3 justify-center">
+                <a
+                  href="tel:065664256"
+                  className="inline-flex items-center justify-center bg-[#3a86ff] text-white px-6 py-3 rounded-md font-medium hover:bg-[#3a86ff]/90 transition-colors"
+                >
+                  {language === "ar"
+                    ? "اتصل بنا: 065664256"
+                    : "Call Us: 065664256"}
+                </a>
+                <a
+                  href="https://wa.me/971507539011"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center border border-[#3a86ff] text-[#3a86ff] px-6 py-3 rounded-md font-medium hover:bg-[#3a86ff]/10 transition-colors"
+                >
+                  {language === "ar"
+                    ? "واتساب: 0507539011"
+                    : "WhatsApp: 0507539011"}
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
