@@ -72,7 +72,7 @@ function HomePageContent() {
                 <div>
                   <h3 className="font-semibold text-[#3a86ff] mb-3">Contact</h3>
                   <p className="text-white/80 text-sm">
-                    info@arablinetours.com
+                    support@arablineuae.com
                   </p>
                   <p className="text-white/80 text-sm">065664256</p>
                   <p className="text-white/80 text-sm">0507539011</p>

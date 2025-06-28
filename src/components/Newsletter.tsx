@@ -13,10 +13,15 @@ const Newsletter = () => {
         <div className="max-w-7xl mx-auto">
           {/* Services Section */}
           <div className="bg-[#3a86ff]/20 backdrop-blur-sm rounded-xl shadow-lg p-6 border border-[#3a86ff]/30">
-            <div className="text-center mb-4">
-              <h3 className="text-2xl font-bold text-[#3a86ff] mb-2">
+            <div className="text-center mb-8">
+              <h3 className="text-3xl font-bold text-white mb-2">
                 {language === "ar" ? "خدماتنا" : "Our Services"}
               </h3>
+              <p className="text-white/80 text-lg">
+                {language === "ar"
+                  ? "نقدم مجموعة شاملة من خدمات السفر والسياحة"
+                  : "We offer a comprehensive range of travel and tourism services"}
+              </p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">

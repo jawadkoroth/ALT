@@ -9,9 +9,7 @@ export default function TravelGuidePage() {
   return (
     <LanguageProvider>
       <div className="min-h-screen bg-white">
-        <div className="fixed w-full z-50 bg-[#3a86ff] shadow-sm py-2">
-          <NavigationBar />
-        </div>
+        <NavigationBar />
         <main className="pt-24 pb-16">
           <TravelGuideSection />
         </main>

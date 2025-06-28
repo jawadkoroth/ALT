@@ -65,7 +65,7 @@ const defaultItems: TravelGuideItem[] = [
       ar: "اكتشف التراث الغني والعجائب الحديثة في أبو ظبي، من مسجد الشيخ زايد الكبير إلى متحف اللوفر أبو ظبي.",
     },
     imageUrl:
-      "https://images.unsplash.com/photo-1542315426-e9259d0e3f8f?w=800&q=80",
+      "https://images.unsplash.com/photo-1512632578888-169bbbc64f33?w=800&q=80",
     category: "destination",
   },
   {

@@ -7,8 +7,9 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Tempo - Modern SaaS Starter",
-  description: "A modern full-stack starter template powered by Next.js",
+  title: "Arab Line Tours - Premium Travel Services in UAE",
+  description:
+    "Your trusted travel partner in the UAE offering visa services, tour packages, flight bookings, and comprehensive travel solutions",
 };
 
 export default function RootLayout({
