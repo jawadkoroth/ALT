@@ -170,7 +170,33 @@ export const Icons = {
       className={props.className}
       {...props}
     >
-      <path d="M17.8 19.2 16 11l3.5-3.5C21 6 21 4 19 4s-2 2-3.5 3.5L11 16l-8.2 1.8c-.5.1-.9.9-.4 1.5l.3.3c.6.5 1.4.1 1.5-.4L6 17l1.8-8.2" />
+      <path d="M2 22h20" />
+      <path d="M6.36 17.4 4 14l-2-2 1.1-1.1L6 13.8l.01.01L10 18l2 2h-2.04L9 19l-1.8-.6" />
+      <path d="M2 22h20" />
+      <path d="M7 8h8l4-4V2l-4 4-4-4v2z" />
+      <circle cx="12" cy="12" r="2" />
+      <path d="M12 2v6l3-3 3 3" />
+      <path d="M12 16v6l-3-3-3 3" />
+    </svg>
+  ),
+  ticket: (props: IconProps) => (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={props.className}
+      {...props}
+    >
+      <path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z" />
+      <path d="M13 5v2" />
+      <path d="M13 17v2" />
+      <path d="M13 11v2" />
     </svg>
   ),
   briefcase: (props: IconProps) => (
@@ -420,11 +446,14 @@ export const Icons = {
       className={props.className}
       {...props}
     >
-      <path d="M12 2c-1 0-2 1-2 2v1c0 1 1 2 2 2s2-1 2-2V4c0-1-1-2-2-2z" />
-      <path d="M8 8c-2 0-4 2-4 4v8h16v-8c0-2-2-4-4-4" />
-      <path d="M6 12h12" />
-      <path d="M8 16h8" />
-      <circle cx="12" cy="6" r="1" />
+      <path d="M12 2l1 2h2l-1.5 1.5L15 8l-3-1.5L9 8l1.5-2.5L9 4h2l1-2z" />
+      <path d="M4 10c0-2 2-4 4-4h8c2 0 4 2 4 4v10H4V10z" />
+      <path d="M6 14h12" />
+      <path d="M8 18h8" />
+      <circle cx="7" cy="8" r="1" />
+      <circle cx="17" cy="8" r="1" />
+      <path d="M7 6V4" />
+      <path d="M17 6V4" />
     </svg>
   ),
 };

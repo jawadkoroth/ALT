@@ -79,8 +79,12 @@ function HomePageContent() {
                 </div>
                 <div>
                   <h3 className="font-semibold text-[#3a86ff] mb-3">Address</h3>
-                  <p className="text-white/80 text-sm">Sheikh Zayed Road</p>
-                  <p className="text-white/80 text-sm">Dubai, UAE</p>
+                  <p className="text-white/80 text-sm">
+                    Maza signal, Industrial area-5
+                  </p>
+                  <p className="text-white/80 text-sm">
+                    Sharjah, United Arab Emirates
+                  </p>
                 </div>
                 <div>
                   <h3 className="font-semibold text-[#3a86ff] mb-3">

@@ -14,7 +14,7 @@ interface HeroSectionProps {
 
 const HeroSection = ({
   whatsappLink = "https://wa.me/971507539011",
-  emailAddress = "info@arablinetours.com",
+  emailAddress = "support@arablineuae.com",
 }: HeroSectionProps) => {
   const { language, translate } = useLanguage();
 

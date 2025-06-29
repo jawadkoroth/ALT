@@ -47,7 +47,7 @@ const NavigationBar = ({
 
   return (
     <nav
-      className={`fixed w-full z-50 transition-all duration-300 ${isScrolled ? "bg-[#3a86ff] shadow-sm py-2" : "bg-transparent py-4"}`}
+      className={`fixed w-full z-50 transition-all duration-300 ${isScrolled ? "bg-[#3a86ff] shadow-sm py-2" : "bg-[#3a86ff] py-4"}`}
       dir={language === "ar" ? "rtl" : "ltr"}
     >
       <div className="container mx-auto px-4 flex justify-between items-center">
@@ -80,7 +80,9 @@ const NavigationBar = ({
               variant="ghost"
               className="text-white hover:text-white/80 transition-colors"
             >
-              Travel Guide
+              {language === "ar"
+                ? translate("nav.travelGuide")
+                : "Travel Guide"}
             </Button>
           </Link>
           <Button
@@ -138,7 +140,9 @@ const NavigationBar = ({
                 variant="ghost"
                 className="text-white hover:text-white/80 transition-colors w-full justify-start"
               >
-                Travel Guide
+                {language === "ar"
+                  ? translate("nav.travelGuide")
+                  : "Travel Guide"}
               </Button>
             </Link>
             <Button

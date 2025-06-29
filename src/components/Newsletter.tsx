@@ -27,7 +27,7 @@ const Newsletter = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
               <div className="p-4 bg-[#3a86ff]/30 rounded-lg border border-[#3a86ff]/40 hover:bg-[#3a86ff]/40 transition-all duration-300">
                 <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center mb-3">
-                  <Icons.plane className="h-5 w-5 text-[#3a86ff]" />
+                  <Icons.ticket className="h-5 w-5 text-[#3a86ff]" />
                 </div>
                 <h4 className="font-semibold text-white mb-1 text-base">
                   {language === "ar" ? "التذاكر" : "Tickets"}
